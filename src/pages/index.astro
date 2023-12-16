@@ -138,44 +138,57 @@ import websocket from "../icons/websocket.svg";
 			<h2>Exotel (SDE 2) - Feb-2020 to Feb-2023</h2>
 			<h3 id="LCD" class="project">Live Call Dashboard</h3>
 			<span class="pill centered">
-				<span class="sr-only">tools used </span>
+				<span class="sr-only">tools used</span>
 				<span class="tech-tag">
 					<Image alt="" src={react} height={15} />
-					<span class="sr-only">react </span>
+					<span class="sr-only">react</span>
 				</span>
 				<span class="tech-tag">
 					<Image alt="" src={golang} height={15} />
-					<span class="sr-only">golang </span>
+					<span class="sr-only">golang</span>
 				</span>
 				<span class="tech-tag">
 					<Image alt="" src={mongo} height={15} />
-					<span class="sr-only">mongo </span>
+					<span class="sr-only">mongo</span>
 				</span>
 			</span>
 			<p>
 				<a
 					href="https://support.exotel.com/support/solutions/articles/3000104288-call-centre-dashboard-private-beta-updated-"
 				>
-					A dashboard for clients to see the analytics live in a
-					glance.
+					A React based dashboard for clients to see the live
+					analytics in a glance.
 				</a>
 			</p>
-			<p>
-				We developed a React based dashboard with graphs for most
-				important live information and tables/cards for other
-				information. It is powered by a go API service serving analytics
-				from MongoDB, another go service was consuming events from a
-				Kafka cluster where all the services were sending events and
-				either putting it directly in MongoDB for live stats or
-				aggregating it in 5mins chunks for historical stats.
-			</p>
-			<p>
-				It allowed the account admins to get an idea of what is
-				happening in their contact center at a glance. They could also
-				get more granular and differently categorized data to assess
-				their agent's and team's performance by following cross links
-				which preserved applied date, group and agent filters.
-			</p>
+			<ul>
+				<li>
+					Graphs for most important live information and tables/cards
+					for other information.
+				</li>
+				<li>
+					Powered by a go API service serving analytics from MongoDB
+				</li>
+				<li>
+					Another go service consuming events from a Kafka cluster
+					where all the services were sending events and it
+					<ul>
+						<li>Puts it directly in MongoDB for live stats</li>
+						<li>
+							Aggregate it in 5 mins chunks for historical stats
+						</li>
+					</ul>
+				</li>
+				<li class="impact">
+					Account admins got a better idea of what is happening in
+					their contact center at a glance.
+				</li>
+				<li class="impact">
+					If needed they could get more granular and differently
+					categorized data to assess their agent's and team's
+					performance by following cross links which preserved applied
+					date, group and agent filters.
+				</li>
+			</ul>
 			<h3 class="project">Notification service</h3>
 			<span class="pill centered">
 				<span class="sr-only">tools used</span>
@@ -193,20 +206,33 @@ import websocket from "../icons/websocket.svg";
 				</span>
 			</span>
 			<p>A notification service to push notifications to browser</p>
-			<p>
-				This service connected and maintained websocket connections with
-				browser tabs. On receiving an event it pushed the notification
-				to the relevant user's browser, which was picked up by the
-				frontend code and <a
-					href="https://support.exotel.com/support/solutions/articles/45252-what-notifications-do-i-get-for-calls-and-where-do-they-show-up-"
-				>
-					shown to the user on the website</a
-				> and as a <a
-					href="https://support.exotel.com/support/solutions/articles/121442-enabilng-desktop-notifications"
-					>desktop notification.</a
-				>
-			</p>
-			<svg class="background" style="width: 40rem; left: -20rem; top: 40rem" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+			<ul>
+				<li>
+					Connected and maintained websocket connections with browser
+					tabs.
+				</li>
+				<li>
+					On receiving an event it pushed the notification to the
+					relevant user's browser
+				</li>
+				<li class="impact">
+					A notification is
+					<a
+						href="https://support.exotel.com/support/solutions/articles/45252-what-notifications-do-i-get-for-calls-and-where-do-they-show-up-"
+					>
+						shown to the user on the website</a
+					> and as a <a
+						href="https://support.exotel.com/support/solutions/articles/121442-enabilng-desktop-notifications"
+						>desktop notification.</a
+					>
+				</li>
+			</ul>
+			<svg
+				class="background"
+				style="width: 40rem; left: -20rem; top: 40rem"
+				viewBox="0 0 200 200"
+				xmlns="http://www.w3.org/2000/svg"
+			>
 				<path
 					fill="#FA4D5620"
 					d="M43.9,-76C57.6,-68.2,69.7,-57.7,73.6,-44.6C77.5,-31.5,73.2,-15.7,72,-0.7C70.7,14.3,72.5,28.6,66.9,38.8C61.3,48.9,48.3,55,35.9,59.6C23.5,64.1,11.8,67.2,-1.9,70.4C-15.5,73.7,-31.1,77.2,-41.2,71.3C-51.3,65.5,-56.1,50.3,-56.7,36.9C-57.4,23.4,-53.9,11.7,-53.4,0.3C-52.8,-11,-55,-22.1,-52.4,-32.1C-49.8,-42.2,-42.3,-51.3,-32.8,-61.4C-23.2,-71.6,-11.6,-82.9,1.8,-85.9C15.2,-89,30.3,-83.9,43.9,-76Z"
@@ -229,57 +255,77 @@ import websocket from "../icons/websocket.svg";
 				</span>
 			</span>
 			<p>Integrated react Single Page App with PHP Multi Page App</p>
-			<p>
-				The main Exotel dashboard is developed using PHP and jQuery, as
-				several new upcoming projects required sophisticated UI and fast
-				iteration. The deadlines didn't allow for micro-frontend
-				architecture modal to be implemented.
-			</p>
-			<p>
-				I implemented <a href="#LCD">Live Call Dashboard</a> in react as
-				an SPA and integrated it with PHP backend so that the pages
-				developed in PHP and jQuery continue to function as before and
-				the pages developed in React can be accessed on new routes.
-			</p>
-			<p class="pagebreak">
-				I wrote, maintained, owned, documented and mentored others for:
-			</p>
 			<ul>
 				<li>
-					CD pipeline for deploying PHP and React projects together
-					using jenkins AWS-s3 and AWS-EC2
+					The main Exotel dashboard is developed using PHP and jQuery
 				</li>
 				<li>
-					Integration code to load react bundle on relevant routes
-					only
+					Implemented <a href="#LCD">Live Call Dashboard</a> in react
+					as an SPA
 				</li>
 				<li>
-					CSS scoping so the old and new styling don't conflict with
-					each other
-				</li>
-				<li>
-					APIs to pass data between server side PHP and client side
-					React
+					integrated it with PHP backend
 					<ul>
 						<li>
-							data to be present during page load injected into JS
-							while PHP is forming the response
+							Pages developed in PHP and jQuery continue to
+							function as before
 						</li>
 						<li>
-							non critical data could be requested by react
-							through API calls
+							Pages developed in React can be accessed on new
+							routes. surrounded by header and sidebar served by
+							PHP
 						</li>
 					</ul>
 				</li>
+				<li>
+					I wrote, maintained, owned, documented and mentored others
+					for:
+					<ul>
+						<li>
+							CD pipeline for deploying PHP and React projects
+							together using jenkins AWS-s3 and AWS-EC2
+						</li>
+						<li>
+							Integration code to load react bundle on relevant
+							routes only
+						</li>
+						<li>
+							CSS scoping so the old and new styling don't
+							conflict with each other
+						</li>
+						<li>
+							APIs to pass data between server side PHP and client
+							side React
+							<ul>
+								<li>
+									data to be present during page load injected
+									into JS while PHP is forming the response
+								</li>
+								<li>
+									non critical data could be requested by
+									react through API calls
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="impact">Made future UI development faster</li>
+				<li class="impact">
+					Avoided some of the performance issues that old pages faced.
+				</li>
+				<li class="impact">
+					Newer pages were available quickly
+					<ul>
+						<li>UI was loaded with minimal data</li>
+						<li>
+							Further data could be fetched parallelly after page
+							load or when needed
+						</li>
+						<li>Reduced server cost and page load times.</li>
+						<li>Reduced page load times.</li>
+					</ul>
+				</li>
 			</ul>
-			<p>
-				This made future UI development faster and fixed some of the
-				performance issues that old pages faced. Newer pages were
-				available quickly as the UI was loaded with minimal data and
-				further data could be fetched parallelly or when needed reducing
-				server cost and page load times.
-			</p>
-
 			<h2>Stanza Living (SDE 1) - Oct-2018 Feb-2020</h2>
 			<h3 class="project">Student and RM Apps</h3>
 			<span class="pill centered">
@@ -289,20 +335,27 @@ import websocket from "../icons/websocket.svg";
 					<span class="">React Native</span>
 				</span>
 			</span>
-			<p>
-				Added several views to
-				<a
-					href="https://play.google.com/store/apps/developer?id=StanzaLiving"
-					>React native apps</a
-				> that were used by the Students, their relationship managers
-				and stanza's partners to manage several services offered by
-				stanza living.
-			</p>
-			<p>
-				Students used these to manage tiffin services, register their
-				grievances. RMs used them to readdress the grievances, mark
-				their attendance etc.
-			</p>
+			<ul>
+				<li>
+					Added several views to
+					<a
+						href="https://play.google.com/store/apps/developer?id=StanzaLiving"
+						>React native apps</a
+					>
+				</li>
+				<li class="impact">
+					Students used these to manage tiffin services, register
+					their grievances.
+				</li>
+				<li class="impact">
+					Relationship managers used them to readdress the grievances,
+					mark their attendance etc.
+				</li>
+				<li class="impact">
+					Stanza's partners used them to list new properties and add
+					details
+				</li>
+			</ul>
 			<h3 class="project">Public landing page and Internal dashboard</h3>
 			<span class="pill centered">
 				<span class="sr-only">tools used</span>
@@ -311,23 +364,39 @@ import websocket from "../icons/websocket.svg";
 					<span class="sr-only">React Native</span>
 				</span>
 			</span>
-			<p>
-				Added analytics to the landing page of stanza living so the
-				leads can have better data on the interest of the potential
-				customers and PMs have better understanding for redesigning the
-				pages.
-			</p>
-			<p>
-				Added meal selection page to internal dashboard where the
-				inventory managers can see the availability of different
-				ingredients and select meals to be delivered to the hostels.
-				This page shows a weekly view of the meal plan for a particular
-				hostels and availability of ingredients, which meal is possible,
-				constraints met and to be met (eg. two high protein meal per
-				week), difference between what meal plan is saved in backend and
-				one currently being edited.
-			</p>
-
+			<ul>
+				<li>Added analytics to the landing page of stanza living</li>
+				<li class="impact">
+					Management got better data on the interest of the potential
+					customers
+				</li>
+				<li class="impact">
+					PMs got better understanding for redesigning the pages
+				</li>
+			</ul>
+			<ul>
+				<li>Added meal selection page to internal dashboard</li>
+				<li>
+					A weekly view of the meal plan for a particular hostels
+					which consists of
+					<ul>
+						<li>Availability of ingredients</li>
+						<li>
+							Constraints met and to be met (eg. two high protein
+							meal per week)
+						</li>
+						<li>Which meal is possible based on above</li>
+						<li>
+							Difference between what meal plan is saved in
+							backend and one currently being edited.
+						</li>
+					</ul>
+				</li>
+				<li class="impact">
+					Inventory managers can intuitively manage meals to be
+					delivered to the hostels.
+				</li>
+			</ul>
 			<h2>GeekSkool (bootcamp) - Feb-2018 to oct-2018</h2>
 			<ul>
 				<a href="https://github.com/rammmukul/lunch-police--slack-bot"
@@ -458,11 +527,6 @@ import websocket from "../icons/websocket.svg";
 		white-space: nowrap;
 		border-width: 0;
 	}
-	@media print {
-		.pagebreak {
-			page-break-before: always;
-		}
-	}
 	a:link {
 		color: rgb(1, 92, 2);
 		text-decoration: underline;
@@ -510,7 +574,7 @@ import websocket from "../icons/websocket.svg";
 		width: 800px;
 		max-width: calc(100% - 2rem);
 		font-size: 1.2rem;
-		line-height: 1.6;
+		line-height: 1.5;
 	}
 	h1 {
 		font-size: 3rem;
@@ -543,5 +607,8 @@ import websocket from "../icons/websocket.svg";
 	.background {
 		position: absolute;
 		z-index: -1;
+	}
+	.impact::marker {
+		content: "➤ ";
 	}
 </style>
