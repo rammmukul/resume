@@ -136,100 +136,9 @@ import websocket from "../icons/websocket.svg";
 		<hr />
 		<section style="position: relative;">
 			<h2>Exotel (SDE 2) - Feb-2020 to Feb-2023</h2>
-			<h3 id="LCD" class="project">Live Call Dashboard</h3>
-			<span class="pill centered">
-				<span class="sr-only">tools used</span>
-				<span class="tech-tag">
-					<Image alt="" src={react} height={15} />
-					<span class="sr-only">react</span>
-				</span>
-				<span class="tech-tag">
-					<Image alt="" src={golang} height={15} />
-					<span class="sr-only">golang</span>
-				</span>
-				<span class="tech-tag">
-					<Image alt="" src={mongo} height={15} />
-					<span class="sr-only">mongo</span>
-				</span>
-			</span>
-			<p>
-				<a
-					href="https://support.exotel.com/support/solutions/articles/3000104288-call-centre-dashboard-private-beta-updated-"
-				>
-					A React based dashboard for clients to see the live
-					analytics in a glance.
-				</a>
-			</p>
-			<ul>
-				<li>
-					Graphs for most important live information and tables/cards
-					for other information.
-				</li>
-				<li>
-					Powered by a go API service serving analytics from MongoDB
-				</li>
-				<li>
-					Another go service consuming events from a Kafka cluster
-					where all the services were sending events and it
-					<ul>
-						<li>Puts it directly in MongoDB for live stats</li>
-						<li>
-							Aggregate it in 5 mins chunks for historical stats
-						</li>
-					</ul>
-				</li>
-				<li class="impact">
-					Account admins got a better idea of what is happening in
-					their contact center at a glance.
-				</li>
-				<li class="impact">
-					If needed they could get more granular and differently
-					categorized data to assess their agent's and team's
-					performance by following cross links which preserved applied
-					date, group and agent filters.
-				</li>
-			</ul>
-			<h3 class="project">Notification service</h3>
-			<span class="pill centered">
-				<span class="sr-only">tools used</span>
-				<span class="tech-tag">
-					<Image alt="" src={javascript} height={15} />
-					<span class="sr-only">javascript</span>
-				</span>
-				<span class="tech-tag">
-					<Image alt="" src={golang} height={15} />
-					<span class="sr-only">golang</span>
-				</span>
-				<span class="tech-tag">
-					<Image alt="" src={websocket} height={15} />
-					<span>websockets</span>
-				</span>
-			</span>
-			<p>A notification service to push notifications to browser</p>
-			<ul>
-				<li>
-					Connected and maintained websocket connections with browser
-					tabs.
-				</li>
-				<li>
-					On receiving an event it pushed the notification to the
-					relevant user's browser
-				</li>
-				<li class="impact">
-					A notification is
-					<a
-						href="https://support.exotel.com/support/solutions/articles/45252-what-notifications-do-i-get-for-calls-and-where-do-they-show-up-"
-					>
-						shown to the user on the website</a
-					> and as a <a
-						href="https://support.exotel.com/support/solutions/articles/121442-enabilng-desktop-notifications"
-						>desktop notification.</a
-					>
-				</li>
-			</ul>
 			<svg
 				class="background"
-				style="width: 40rem; left: -20rem; top: 40rem"
+				style="width: 40rem; left: -20rem; top: 36rem"
 				viewBox="0 0 200 200"
 				xmlns="http://www.w3.org/2000/svg"
 			>
@@ -254,26 +163,25 @@ import websocket from "../icons/websocket.svg";
 					<span class="sr-only">PHP</span>
 				</span>
 			</span>
-			<p>Integrated react Single Page App with PHP Multi Page App</p>
+			<p>
+				Integrated react Single Page App with PHP Multi Page App
+				(similar to island architecture)
+			</p>
 			<ul>
 				<li>
-					The main Exotel dashboard is developed using PHP and jQuery
+					Implemented <a href="#LCD">Live Call Dashboard</a> in react as
+					an SPA
 				</li>
 				<li>
-					Implemented <a href="#LCD">Live Call Dashboard</a> in react
-					as an SPA
-				</li>
-				<li>
-					integrated it with PHP backend
+					integrated it with PHP backend and made sure that
 					<ul>
 						<li>
 							Pages developed in PHP and jQuery continue to
 							function as before
 						</li>
 						<li>
-							Pages developed in React can be accessed on new
-							routes. surrounded by header and sidebar served by
-							PHP
+							Pages developed in React coexist with header and
+							sidebar served by PHP
 						</li>
 					</ul>
 				</li>
@@ -294,12 +202,12 @@ import websocket from "../icons/websocket.svg";
 							conflict with each other
 						</li>
 						<li>
-							APIs to pass data between server side PHP and client
-							side React
+							REST APIs to pass data between server side PHP and
+							client side React
 							<ul>
 								<li>
 									data to be present during page load injected
-									into JS while PHP is forming the response
+									into JS while PHP is forming the page
 								</li>
 								<li>
 									non critical data could be requested by
@@ -309,21 +217,96 @@ import websocket from "../icons/websocket.svg";
 						</li>
 					</ul>
 				</li>
-				<li class="impact">Made future UI development faster</li>
 				<li class="impact">
-					Avoided some of the performance issues that old pages faced.
+					Made future UI development faster, what used to take more
+					than a month now took ~1 week
 				</li>
 				<li class="impact">
-					Newer pages were available quickly
-					<ul>
-						<li>UI was loaded with minimal data</li>
-						<li>
-							Further data could be fetched parallelly after page
-							load or when needed
-						</li>
-						<li>Reduced server cost and page load times.</li>
-						<li>Reduced page load times.</li>
-					</ul>
+					Eliminated some of the performance issues that old pages
+					faced.
+				</li>
+				<li class="impact">
+					For pages ported page load speed improved 300x (worst case)
+				</li>
+				<li class="impact">Reduced server cost</li>
+			</ul>
+			<h3 id="LCD" class="project">Live Call Dashboard</h3>
+			<span class="pill centered">
+				<span class="sr-only">tools used</span>
+				<span class="tech-tag">
+					<Image alt="" src={react} height={15} />
+					<span class="sr-only">react</span>
+				</span>
+				<span class="tech-tag">
+					<Image alt="" src={golang} height={15} />
+					<span class="sr-only">golang</span>
+				</span>
+				<span class="tech-tag">
+					<Image alt="" src={mongo} height={15} />
+					<span class="sr-only">mongo</span>
+				</span>
+				<span class="tech-tag">
+					<span>AWS</span>
+				</span>
+			</span>
+			<p>
+				<a
+					href="https://support.exotel.com/support/solutions/articles/3000104288-call-centre-dashboard-private-beta-updated-"
+				>
+					A React based dashboard for clients to see the live
+					analytics in a glance.
+				</a>
+			</p>
+			<ul>
+				<li>
+					Built charts to show most important live information and
+					tables/cards for other information.
+				</li>
+				<li>Implemented routing and cross links with preserved filters</li>
+				<li>Built REST APIs in go to serve analytics from MongoDB</li>
+				<li>Aggregated data in chunks for historical stats</li>
+				<li class="impact">
+					Account admins got a better idea of what is happening in
+					their contact center at a glance.
+				</li>
+				<li class="impact">
+					They could get granular and categorized data to assess their agent's and team's
+					performance by following cross links which preserved applied
+					date, group and agent filters.
+				</li>
+			</ul>
+			<h3 class="project">Notification service</h3>
+			<span class="pill centered">
+				<span class="sr-only">tools used</span>
+				<span class="tech-tag">
+					<Image alt="" src={javascript} height={15} />
+					<span class="sr-only">javascript</span>
+				</span>
+				<span class="tech-tag">
+					<Image alt="" src={golang} height={15} />
+					<span class="sr-only">golang</span>
+				</span>
+				<span class="tech-tag">
+					<Image alt="" src={websocket} height={15} />
+					<span>websockets</span>
+				</span>
+			</span>
+			<p>A notification service to push notifications to browser</p>
+			<ul>
+				<li>
+					Connected and maintained websocket connections with browser
+					tabs with 99.994% availability.
+				</li>
+				<li>
+					Implemented notification on frontend to be
+					<a
+						href="https://support.exotel.com/support/solutions/articles/45252-what-notifications-do-i-get-for-calls-and-where-do-they-show-up-"
+					>
+						shown to the user on the website</a
+					> and as a <a
+						href="https://support.exotel.com/support/solutions/articles/121442-enabilng-desktop-notifications"
+						>desktop notification.</a
+					>
 				</li>
 			</ul>
 			<h2>Stanza Living (SDE 1) - Oct-2018 Feb-2020</h2>
@@ -377,7 +360,7 @@ import websocket from "../icons/websocket.svg";
 			<ul>
 				<li>Added meal selection page to internal dashboard</li>
 				<li>
-					A weekly view of the meal plan for a particular hostels
+					Crafted a weekly view of the meal plan for a particular hostels
 					which consists of
 					<ul>
 						<li>Availability of ingredients</li>
