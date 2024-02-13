@@ -90,6 +90,9 @@ import websocket from "../icons/websocket.svg";
 			<h2>Technical Skills</h2>
 			<h3>Programming languages</h3>
 			<span class="pill">
+				<Image alt="" src={python} height={15} /> python
+			</span>
+			<span class="pill">
 				<Image alt="" src={javascript} height={15} /> JavaScript
 			</span>
 			<span class="pill">
@@ -97,9 +100,6 @@ import websocket from "../icons/websocket.svg";
 			</span>
 			<span class="pill">
 				<Image alt="" src={php} height={15} /> PHP
-			</span>
-			<span class="pill">
-				<Image alt="" src={python} height={15} /> python
 			</span>
 			<br />
 			<h3>Front-end Development</h3>
@@ -118,6 +118,12 @@ import websocket from "../icons/websocket.svg";
 			<br />
 			<h3>Back-end Development</h3>
 			<span class="pill">
+				<Image alt="" src={mongo} height={15} /> MongoDB
+			</span>
+			<span class="pill">
+				<Image alt="" src={sql} height={15} /> SQL
+			</span>
+			<span class="pill">
 				<Image alt="" src={nodejs} height={15} /> node.js
 			</span>
 			<span class="pill">
@@ -126,19 +132,13 @@ import websocket from "../icons/websocket.svg";
 			<span class="pill">
 				<Image alt="" src={golang} height={15} /> go
 			</span>
-			<span class="pill">
-				<Image alt="" src={mongo} height={15} /> MongoDB
-			</span>
-			<span class="pill">
-				<Image alt="" src={sql} height={15} /> SQL
-			</span>
 		</section>
 		<hr />
 		<section style="position: relative;">
 			<h2>Exotel (SDE 2) - Feb-2020 to Feb-2023</h2>
 			<svg
 				class="background"
-				style="width: 40rem; left: -20rem; top: 36rem"
+				style="width: 40rem; left: -20rem; top: 0rem"
 				viewBox="0 0 200 200"
 				xmlns="http://www.w3.org/2000/svg"
 			>
@@ -147,89 +147,6 @@ import websocket from "../icons/websocket.svg";
 					d="M43.9,-76C57.6,-68.2,69.7,-57.7,73.6,-44.6C77.5,-31.5,73.2,-15.7,72,-0.7C70.7,14.3,72.5,28.6,66.9,38.8C61.3,48.9,48.3,55,35.9,59.6C23.5,64.1,11.8,67.2,-1.9,70.4C-15.5,73.7,-31.1,77.2,-41.2,71.3C-51.3,65.5,-56.1,50.3,-56.7,36.9C-57.4,23.4,-53.9,11.7,-53.4,0.3C-52.8,-11,-55,-22.1,-52.4,-32.1C-49.8,-42.2,-42.3,-51.3,-32.8,-61.4C-23.2,-71.6,-11.6,-82.9,1.8,-85.9C15.2,-89,30.3,-83.9,43.9,-76Z"
 					transform="translate(100 100)"></path>
 			</svg>
-			<h3 class="project">React integration with PHP</h3>
-			<span class="pill centered">
-				<span class="sr-only">tools used</span>
-				<span class="tech-tag">
-					<Image alt="" src={javascript} height={15} />
-					<span class="sr-only">javascript</span>
-				</span>
-				<span class="tech-tag">
-					<Image alt="" src={react} height={15} />
-					<span class="sr-only">React</span>
-				</span>
-				<span class="tech-tag">
-					<Image alt="" src={php} height={15} />
-					<span class="sr-only">PHP</span>
-				</span>
-			</span>
-			<p>
-				Integrated react Single Page App with PHP Multi Page App
-				(similar to island architecture)
-			</p>
-			<ul>
-				<li>
-					Implemented <a href="#LCD">Live Call Dashboard</a> in react as
-					an SPA
-				</li>
-				<li>
-					integrated it with PHP backend and made sure that
-					<ul>
-						<li>
-							Pages developed in PHP and jQuery continue to
-							function as before
-						</li>
-						<li>
-							Pages developed in React coexist with header and
-							sidebar served by PHP
-						</li>
-					</ul>
-				</li>
-				<li>
-					I wrote, maintained, owned, documented and mentored others
-					for:
-					<ul>
-						<li>
-							CD pipeline for deploying PHP and React projects
-							together using jenkins AWS-s3 and AWS-EC2
-						</li>
-						<li>
-							Integration code to load react bundle on relevant
-							routes only
-						</li>
-						<li>
-							CSS scoping so the old and new styling don't
-							conflict with each other
-						</li>
-						<li>
-							REST APIs to pass data between server side PHP and
-							client side React
-							<ul>
-								<li>
-									data to be present during page load injected
-									into JS while PHP is forming the page
-								</li>
-								<li>
-									non critical data could be requested by
-									react through API calls
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li class="impact">
-					Made future UI development faster, what used to take more
-					than a month now took ~1 week
-				</li>
-				<li class="impact">
-					Eliminated some of the performance issues that old pages
-					faced.
-				</li>
-				<li class="impact">
-					For pages ported page load speed improved 300x (worst case)
-				</li>
-				<li class="impact">Reduced server cost</li>
-			</ul>
 			<h3 id="LCD" class="project">Live Call Dashboard</h3>
 			<span class="pill centered">
 				<span class="sr-only">tools used</span>
@@ -258,13 +175,14 @@ import websocket from "../icons/websocket.svg";
 				</a>
 			</p>
 			<ul>
+				<li>Ingested data from various micro-services</li>
+				<li>Processed and saved data in Mongo, making it easy to query by time and entities (agents, groups)</li>
+				<li>Aggregated data in 5 min chunks for historical stats</li>
 				<li>
 					Built charts to show most important live information and
 					tables/cards for other information.
 				</li>
-				<li>Implemented routing and cross links with preserved filters</li>
 				<li>Built REST APIs in go to serve analytics from MongoDB</li>
-				<li>Aggregated data in chunks for historical stats</li>
 				<li class="impact">
 					Account admins got a better idea of what is happening in
 					their contact center at a glance.
@@ -275,70 +193,30 @@ import websocket from "../icons/websocket.svg";
 					date, group and agent filters.
 				</li>
 			</ul>
-			<h3 class="project">Notification service</h3>
+			<h3 class="project">Reports downloads</h3>
 			<span class="pill centered">
 				<span class="sr-only">tools used</span>
+				<span class="tech-tag">
+					<Image alt="" src={php} height={15} />
+					<span class="sr-only">PHP</span>
+				</span>
 				<span class="tech-tag">
 					<Image alt="" src={javascript} height={15} />
 					<span class="sr-only">javascript</span>
 				</span>
-				<span class="tech-tag">
-					<Image alt="" src={golang} height={15} />
-					<span class="sr-only">golang</span>
-				</span>
-				<span class="tech-tag">
-					<Image alt="" src={websocket} height={15} />
-					<span>websockets</span>
-				</span>
 			</span>
-			<p>A notification service to push notifications to browser</p>
+			<p>Built daily and on demand report generation</p>
 			<ul>
 				<li>
-					Connected and maintained websocket connections with browser
-					tabs with 99.994% availability.
+					Build report pipeline to generate SMS and calls reports
 				</li>
-				<li>
-					Implemented notification on frontend to be
-					<a
-						href="https://support.exotel.com/support/solutions/articles/45252-what-notifications-do-i-get-for-calls-and-where-do-they-show-up-"
-					>
-						shown to the user on the website</a
-					> and as a <a
-						href="https://support.exotel.com/support/solutions/articles/121442-enabilng-desktop-notifications"
-						>desktop notification.</a
-					>
-				</li>
+				<li>Added Filters to customize report to user's need</li>
+				<li>Scheduled reports to be generated daily before working hours according to client's business hours</li>
+				<li>Added fail safes so that report generation can resume after unexpected downtimes of system</li>
+				<li>Compartmentalized data so that error in one clients data does not effect report for others</li>
+				<li>Build UI for on demand report generation</li>
 			</ul>
 			<h2>Stanza Living (SDE 1) - Oct-2018 Feb-2020</h2>
-			<h3 class="project">Student and RM Apps</h3>
-			<span class="pill centered">
-				<span class="sr-only">tools used</span>
-				<span class="tech-tag">
-					<Image alt="" src={react} height={15} />
-					<span class="">React Native</span>
-				</span>
-			</span>
-			<ul>
-				<li>
-					Added several views to
-					<a
-						href="https://play.google.com/store/apps/developer?id=StanzaLiving"
-						>React native apps</a
-					>
-				</li>
-				<li class="impact">
-					Students used these to manage tiffin services, register
-					their grievances.
-				</li>
-				<li class="impact">
-					Relationship managers used them to readdress the grievances,
-					mark their attendance etc.
-				</li>
-				<li class="impact">
-					Stanza's partners used them to list new properties and add
-					details
-				</li>
-			</ul>
 			<h3 class="project">Public landing page and Internal dashboard</h3>
 			<span class="pill centered">
 				<span class="sr-only">tools used</span>
@@ -357,75 +235,11 @@ import websocket from "../icons/websocket.svg";
 					PMs got better understanding for redesigning the pages
 				</li>
 			</ul>
-			<ul>
-				<li>Added meal selection page to internal dashboard</li>
-				<li>
-					Crafted a weekly view of the meal plan for a particular hostels
-					which consists of
-					<ul>
-						<li>Availability of ingredients</li>
-						<li>
-							Constraints met and to be met (eg. two high protein
-							meal per week)
-						</li>
-						<li>Which meal is possible based on above</li>
-						<li>
-							Difference between what meal plan is saved in
-							backend and one currently being edited.
-						</li>
-					</ul>
-				</li>
-				<li class="impact">
-					Inventory managers can intuitively manage meals to be
-					delivered to the hostels.
-				</li>
-			</ul>
 			<h2>GeekSkool (bootcamp) - Feb-2018 to oct-2018</h2>
 			<ul>
-				<a href="https://github.com/rammmukul/lunch-police--slack-bot"
+				<a href="https://github.com/rammmukul/elasticGuttenburgs"
 					><li>
-						A special slack bot to automate some daily tasks
-						<span class="pill centered">
-							<span class="sr-only">tools used</span>
-							<span class="tech-tag">
-								<Image alt="" src={slack} height={15} />
-								<span class="sr-only">slack</span>
-							</span>
-							<span class="tech-tag">
-								<Image alt="" src={bot} height={15} />
-								<span class="sr-only">bot</span>
-							</span>
-						</span>
-					</li></a
-				>
-				<a href="https://github.com/rammmukul/Wiktionary-Lookup-addon"
-					><li>
-						A Firefox addon that displays definition of the selected
-						word
-						<span class="pill centered">
-							<span class="sr-only">tools used</span>
-							<span class="tech-tag">
-								<Image alt="" src={javascript} height={15} />
-								<span class="sr-only">javascript</span>
-							</span>
-						</span>
-					</li></a
-				>
-				<a href="https://github.com/rammmukul/lazy-promise"
-					><li>
-						An implementation of “Lazy” Promise
-						<span class="pill centered">
-							<span class="sr-only">tools used</span>
-							<span class="tech-tag">
-								<Image alt="" src={javascript} height={15} />
-								<span class="sr-only">javascript</span>
-							</span>
-						</span>
-					</li></a
-				>
-				<a href="https://rammmukul.github.io/index.html"
-					><li>
-						An implementation of elementary Cellular Automaton
+						Ingested Gutenberg data and made it fuzzy searchable.
 						<span class="pill centered">
 							<span class="sr-only">tools used</span>
 							<span class="tech-tag">
@@ -433,53 +247,15 @@ import websocket from "../icons/websocket.svg";
 								<span class="sr-only">javascript</span>
 							</span>
 							<span class="tech-tag">
-								<Image alt="" src={html} height={15} />
-								<span class="sr-only">html</span>
+								<Image alt="" src={nodejs} height={15} />
+								<span class="sr-only">node</span>
 							</span>
 							<span class="tech-tag">
-								<Image alt="" src={css} height={15} />
-								<span class="sr-only">css</span>
+								<span>Elastic search</span>
 							</span>
 						</span>
 					</li></a
 				>
-				<a href="https://github.com/rammmukul/web-MIDI-keyboard"
-					><li>
-						web-MIDI-keyboard
-						<span class="pill centered">
-							<span class="sr-only">tools used</span>
-							<span class="tech-tag">
-								<Image alt="" src={javascript} height={15} />
-								<span class="sr-only">javascript</span>
-							</span>
-						</span>
-					</li></a
-				>
-				<a href="https://github.com/rammmukul/lispInterpreter"
-					><li>
-						A lisp interpreter in js
-						<span class="pill centered">
-							<span class="sr-only">tools used</span>
-							<span class="tech-tag">
-								<Image alt="" src={javascript} height={15} />
-								<span class="sr-only">javascript</span>
-							</span>
-						</span>
-					</li></a
-				>
-				<a href="https://github.com/rammmukul/jsonParser"
-					><li>
-						A JSON parser in js
-						<span class="pill centered">
-							<span class="sr-only">tools used</span>
-							<span class="tech-tag">
-								<Image alt="" src={javascript} height={15} />
-								<span class="sr-only">javascript</span>
-							</span>
-						</span>
-					</li></a
-				>
-			</ul>
 			<a id="last" href="https://github.com/rammmukul?tab=repositories"
 				>more...</a
 			>
@@ -487,7 +263,7 @@ import websocket from "../icons/websocket.svg";
 				class="background"
 				viewBox="-50 -50 200 200"
 				xmlns="http://www.w3.org/2000/svg"
-				style="bottom: 0; width: 30rem; right: 0;"
+				style="bottom: -100px; width: 30rem; right: -50px;"
 			>
 				<path
 					fill="#FA4D5680"
@@ -579,7 +355,7 @@ import websocket from "../icons/websocket.svg";
 		font-size: 1.2rem;
 		text-align: justify;
 		text-indent: 1em;
-		line-height: 1.3em;
+		line-height: .3;
 	}
 	ul {
 		margin: 0.2em 0;
